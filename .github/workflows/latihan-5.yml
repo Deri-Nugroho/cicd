@@ -18,7 +18,7 @@ jobs:
 
       - name: Siapkan SSH config (ProxyCommand cloudflared access, tanpa SSH key)
         env:
-          URL_VM: ${{ secrets.URL_VM }}
+          URL_VM: ${{ secrets.URL_VM }} 
         run: |
           mkdir -p ~/.ssh
           cat >> ~/.ssh/config <<EOC
