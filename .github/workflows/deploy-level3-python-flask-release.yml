@@ -49,7 +49,7 @@ jobs:
         env:
           SSHPASS: ${{ secrets.VPS_PASSWORD }}
         run: |
-          ssh vm-a "sudo mkdir -p /opt/level3-flask && sudo chown \$USER:\$USER /opt/level3-flask"
+          sshpass -e ssh vm-a "sudo mkdir -p /opt/level3-flask && sudo chown \$USER:\$USER /opt/level3-flask"
           sshpass -e scp -o StrictHostKeyChecking=no \
             skenario1-github-actions-vps-proxycommand/level3-python-flask-release/app/app.py \
             skenario1-github-actions-vps-proxycommand/level3-python-flask-release/app/requirements.txt \
